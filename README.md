@@ -1,10 +1,14 @@
-# Lead Capture & Routing System (MVP)
+<h1 align="center">Lead Capture & Routing System (MVP)</h1>
 
 ## Overview
-This project is a **demo lead automation system** built in [Make.com](https://www.make.com/).  
-The goal is to show how leads can be captured, cleaned, deduplicated, and routed automatically — reducing manual work and giving instant visibility into “hot” opportunities.
+This demo is a **Make (formerly Integromat) automation** that captures leads from Google Forms into Google Sheets, cleans and enriches the data, scores each lead, and sends **HOT lead alerts** via email/Slack.
 
-**Project Flow:**  
+Form → Sheets (Leads_Raw) → Normalize & Dedupe → Update/Append (Leads_Clean) → Router (Hot/Normal) → Email Alert
+
+![Lead Capture Demo](leads-demo.mp4.gif)
+
+
+**Workflow Overview:**  
 1. A lead fills out a Google Form.  
 2. The data goes into a Google Sheet (Leads_Raw).  
 3. Make normalizes the data and generates a dedupe key (email).  
@@ -15,26 +19,24 @@ The goal is to show how leads can be captured, cleaned, deduplicated, and routed
 
 ---
 
-## Workflow Diagram
-- Form → Sheets (Leads_Raw) → Normalize & Dedupe → Update/Append (Leads_Clean) → Router (Hot/Normal) → Email Alert
-(Add Image)
-
-
----
-
-## Features Built
-- Lead capture (Google Form → Google Sheets)
-- Normalize & dedupe by email
-- Update existing records or append new
-- Hot lead routing (budget/campaign rules)
-- Email alerts for hot leads
+## Features 
+- **Google Sheets Integration** – Clean, normalized database of all leads.  
+- **Lead Scoring** – HOT if budget ≥ 5000, otherwise Normal.  
+- **Email Alerts** – Sends formatted Gmail alerts for HOT leads.  
+- **Deduplication** – Prevents duplicate leads using normalized email key.  
+- **Weekly Summary (optional)** – Digest of new leads for reporting.  
 
 ---
 
-## Demo (Screenshots)
-- Google Sheet (Leads_Clean tab with deduped rows)  
-- Example “🔥 Hot Lead Alert” email  
-(Add Image)
+## 📂 Folder/Sheet Structure
+- `Leads_Raw` → Captures raw form submissions.  
+- `Leads_Clean` → Normalized, deduped, scored leads.  
+- `Error_Log` → Tracks automation errors (optional).  
+
+--- 
+
+## 📬 Example Email Alert
+![Hot Lead Demo](hot-lead.png)
 
 ---
 
